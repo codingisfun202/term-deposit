@@ -30,7 +30,7 @@ def main
 
   final_balance = term_deposit.calculate_final_balance()
 
-  puts "Final Balance after #{term_years} years: $#{'%.2f' % final_balance}"
+  puts "Final Balance after #{term_years} years: $#{final_balance.round}"
 end
 
 main if __FILE__ == $PROGRAM_NAME

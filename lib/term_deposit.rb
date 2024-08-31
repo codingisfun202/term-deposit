@@ -32,7 +32,7 @@ class TermDeposit
     when 'annually' then 1
     when 'at maturity' then 1
     else
-      raise Error("Invalid interest payment frequency")
+      raise ArgumentError, "Invalid interest payment frequency"
     end
   end
 end
