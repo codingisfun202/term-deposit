@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'optparse'
+require_relative '../lib/term_deposit'
 
 def get_valid_input(prompt, error_message)
   loop do
@@ -25,7 +26,9 @@ def main
     %w[monthly quarterly annually at\ maturity].include?(input.downcase)
   end.downcase
 
-  final_balance = 123
+  term_deposit = TermDeposit.new(start_amount:, interest_rate: , term_years:, frequency:)
+
+  final_balance = term_deposit.calculate_final_balance()
 
   puts "Final Balance after #{term_years} years: $#{'%.2f' % final_balance}"
 end
