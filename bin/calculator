@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+require 'optparse'
+
+def get_valid_input(prompt, error_message)
+  loop do
+    print prompt
+    input = gets.chomp
+    return input if yield(input)
+    puts error_message
+  end
+end
+
+def main
+  start_amount = get_valid_input("Enter the start deposit amount (e.g., 10000): ",
+                                 "Please enter a valid number.") { |input| input.match?(/^\d+(\.\d+)?$/) }.to_f
+
+  interest_rate = get_valid_input("Enter the interest rate (e.g., 1.10): ",
+                                  "Please enter a valid number.") { |input| input.match?(/^\d+(\.\d+)?$/) }.to_f
+
+  term_years = get_valid_input("Enter the investment term in years (e.g., 3): ",
+                               "Please enter a valid integer.") { |input| input.match?(/^\d+$/) }.to_i
+
+  frequency = get_valid_input("Enter the interest paid frequency (monthly, quarterly, annually, at maturity): ",
+                              "Please enter a valid frequency (monthly, quarterly, annually, at maturity).") do |input|
+    %w[monthly quarterly annually at\ maturity].include?(input.downcase)
+  end.downcase
+
+  final_balance = 123
+
+  puts "Final Balance after #{term_years} years: $#{'%.2f' % final_balance}"
+end
+
+main if __FILE__ == $PROGRAM_NAME
