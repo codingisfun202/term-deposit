@@ -17,9 +17,9 @@ And it calculate the final balance with the given inputs and the final balance w
 
 ## Prerequisites
 
-- Ruby (version 3.1.4 or higher), to install ruby see this [doc
+- Ruby (version 3.1.4 or higher), to install ruby see this [doc](https://www.ruby-lang.org/en/documentation/installation/)
 - Bundler (`gem install bundler`)
-- Visual Studio Code (VS Code)
+- Visual Studio Code ([VS Code](https://code.visualstudio.com/))
 
 ## Getting Started
 
@@ -70,7 +70,7 @@ For calculation:
 * Compounded interest is used for monthly, quarterly, or annually.
 * Simple interest is used if the interest is paid at maturity.
 
-### Limitation and possible improvements
+## Limitation and Possible Improvements
 
 * UI improves :  This app is purely a command-line interface (CLI) tool , can be further improved with nicer UI.
 * Error Handling:  This app currently only handle certain input type and can be expanded further.
