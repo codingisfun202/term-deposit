@@ -26,7 +26,7 @@ And it calculate the final balance with the given inputs and the final balance w
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/Shen-Guo/term-deposit
+   git clone https://github.com/codingisfun202/term-deposit.git
    cd term-deposit
    ```
 2. How to run the app:
